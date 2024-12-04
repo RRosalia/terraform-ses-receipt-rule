@@ -24,6 +24,11 @@ variable "s3_object_key_prefix" {
   default     = ""
 }
 
+variable "s3_iam_role_arn" {
+  description = "The IAM role that allows amazon ses to write to my s3 bucket"
+  type        = string
+}
+
 variable "sns_topic_arn" {
   description = "Optional ARN of an SNS topic to publish notifications"
   type        = string
@@ -36,8 +41,8 @@ variable "scan_enabled" {
   default     = true
 }
 
-variable "stop_process" {
-  description = "Stop processing further rules if this rule matches"
-  type        = bool
-  default     = false
+variable "tls_policy" {
+  description = "Do we require the tls for all emails"
+  type        = string
+  default     = "Require"
 }
