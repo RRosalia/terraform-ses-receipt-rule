@@ -15,7 +15,7 @@ resource "aws_ses_receipt_rule" "this" {
     object_key_prefix = var.s3_object_key_prefix
     iam_role_arn      = var.s3_iam_role_arn
     topic_arn         = var.sns_topic_arn # Optional SNS Topic
-    position          = 0
+    position          = 1
   }
 
   scan_enabled = var.scan_enabled
